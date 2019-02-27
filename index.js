@@ -126,7 +126,7 @@ class GeoJsonGeometriesLookup {
 
       for (let i = 0, len = bboxs.length; i < len; i++) {
         const geom = dim.list[bboxs[i].id];
-        if (!tcontains(geom, geometry)) {
+        if (!options.justOverlap && !tcontains(geom, geometry)) {
           continue;
         }
         func(geom, count);
